@@ -20,8 +20,8 @@ perm=$(($mem/4))
 
 function install_rundeck() {
     java -jar $RDECK_JAR --installonly
-    echo "${DEFAULT_ADMIN_USER:-docker}:${DEFAULT_ADMIN_PASSWORD:-docker},user,admin" > $RDECK_BASE/server/config/realm.properties
-    echo "${DEFAULT_USER:-docker}:${DEFAULT_PASSWORD:-docker},user" >> $RDECK_BASE/server/config/realm.properties
+    echo "${DEFAULT_ADMIN_USER:-docker}:${DEFAULT_ADMIN_PASSWORD:-admin},user,admin" > $RDECK_BASE/server/config/realm.properties
+    echo "${DEFAULT_USER:-docker}:${DEFAULT_PASSWORD:-admin},user" >> $RDECK_BASE/server/config/realm.properties
 }
 
 function config_grails_url() {
